@@ -1,0 +1,351 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- ================= HERO SECTION ================= -->
+
+<section class="py-5 bg-primary text-white">
+
+<div class="container">
+
+<div class="row align-items-center">
+
+<div class="col-lg-6">
+
+<h1 class="display-4 fw-bold">
+
+<i class="bi bi-cloud-upload-fill"></i>
+
+Secure File Upload
+
+</h1>
+
+<p class="lead mt-4">
+
+Upload your important documents safely to the cloud using
+<strong>AES-256 Encryption</strong>,
+<strong>SHA-256 Integrity Verification</strong>,
+OTP Authentication, and Secure Cloud Storage.
+
+</p>
+
+<div class="mt-4">
+
+<span class="badge bg-warning text-dark fs-6 p-3">
+
+AES-256 Encryption
+
+</span>
+
+<span class="badge bg-success fs-6 p-3">
+
+SHA-256 Integrity
+
+</span>
+
+</div>
+
+</div>
+
+<div class="col-lg-6 text-center">
+
+<i class="bi bi-cloud-arrow-up-fill"
+
+style="font-size:220px;">
+
+</i>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= UPLOAD FORM ================= -->
+
+<section class="py-5">
+
+<div class="container">
+
+<div class="row justify-content-center">
+
+<div class="col-lg-8">
+
+<div class="card shadow-lg border-0 rounded-4">
+
+<div class="card-header bg-primary text-white text-center">
+
+<h2>
+
+<i class="bi bi-folder2-open"></i>
+
+Upload File
+
+</h2>
+
+</div>
+
+<div class="card-body p-5">
+
+<form
+
+action="/upload"
+
+method="POST"
+
+enctype="multipart/form-data">
+
+<!-- Drag & Drop Upload -->
+
+<div class="mb-4">
+
+<label class="form-label fw-bold">
+
+Select File
+
+</label>
+
+<div
+
+class="border border-3 border-primary rounded-4 p-5 text-center"
+
+style="border-style:dashed !important;">
+
+<i class="bi bi-cloud-upload display-1 text-primary"></i>
+
+<h4 class="mt-3">
+
+Drag & Drop File Here
+
+</h4>
+
+<p class="text-muted">
+
+or click below to browse
+
+</p>
+
+<input
+
+type="file"
+
+name="file"
+
+class="form-control form-control-lg"
+
+required>
+
+</div>
+
+</div>
+
+<!-- File Description -->
+
+<div class="mb-4">
+
+<label class="form-label fw-bold">
+
+File Description (Optional)
+
+</label>
+
+<textarea
+
+name="description"
+
+class="form-control"
+
+rows="4"
+
+placeholder="Enter a short description..."></textarea>
+
+</div>
+
+<!-- Encryption Information -->
+
+<div class="alert alert-info">
+
+<h5>
+
+<i class="bi bi-shield-lock-fill"></i>
+
+Security Features
+
+</h5>
+
+<ul class="mb-0">
+
+<li>AES-256 File Encryption</li>
+
+<li>SHA-256 Hash Generation</li>
+
+<li>Secure Cloud Storage</li>
+
+<li>Download Protection</li>
+
+<li>Security Log Monitoring</li>
+
+</ul>
+
+</div>
+<!-- Upload Button -->
+
+<div class="d-grid mt-4">
+
+<button
+type="submit"
+class="btn btn-primary btn-lg">
+
+<i class="bi bi-cloud-upload-fill"></i>
+
+Upload & Encrypt File
+
+</button>
+
+</div>
+
+</form>
+
+<hr class="my-4">
+
+<!-- Security Status -->
+
+<div class="row text-center">
+
+<div class="col-md-4">
+
+<div class="card border-0 shadow-sm">
+
+<div class="card-body">
+
+<i class="bi bi-lock-fill text-primary display-5"></i>
+
+<h5 class="mt-3">
+
+AES-256
+
+</h5>
+
+<p class="small text-muted">
+
+Military Grade Encryption
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card border-0 shadow-sm">
+
+<div class="card-body">
+
+<i class="bi bi-fingerprint text-success display-5"></i>
+
+<h5 class="mt-3">
+
+SHA-256
+
+</h5>
+
+<p class="small text-muted">
+
+Integrity Verification
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card border-0 shadow-sm">
+
+<div class="card-body">
+
+<i class="bi bi-cloud-check-fill text-info display-5"></i>
+
+<h5 class="mt-3">
+
+Secure Cloud
+
+</h5>
+
+<p class="small text-muted">
+
+Protected Storage
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Upload Tips -->
+
+<div class="alert alert-warning mt-5">
+
+<h5>
+
+<i class="bi bi-lightbulb-fill"></i>
+
+Upload Tips
+
+</h5>
+
+<ul class="mb-0">
+
+<li>Upload only supported file formats.</li>
+
+<li>Large files may take longer to encrypt.</li>
+
+<li>Keep your account secure with a strong password.</li>
+
+<li>Verify file integrity after uploading.</li>
+
+<li>Only authorized users can download encrypted files.</li>
+
+</ul>
+
+</div>
+
+<!-- Dashboard Button -->
+
+<div class="text-center mt-4">
+
+<a href="/dashboard"
+
+class="btn btn-secondary btn-lg">
+
+<i class="bi bi-arrow-left-circle-fill"></i>
+
+Back to Dashboard
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,187 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="text-center mb-5">
+
+        <h1 class="text-primary fw-bold">
+
+            <i class="bi bi-speedometer2"></i>
+
+            Project Dashboard
+
+        </h1>
+
+        <p class="text-muted">
+
+            Final Cloud Security Project Overview
+
+        </p>
+
+    </div>
+
+    <div class="row g-4">
+
+        <div class="col-md-4">
+
+            <div class="card shadow border-0 text-center">
+
+                <div class="card-body">
+
+                    <i class="bi bi-people-fill display-3 text-primary"></i>
+
+                    <h2>{{ total_users }}</h2>
+
+                    <p>Total Users</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card shadow border-0 text-center">
+
+                <div class="card-body">
+
+                    <i class="bi bi-folder-fill display-3 text-warning"></i>
+
+                    <h2>{{ total_files }}</h2>
+
+                    <p>Total Files</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card shadow border-0 text-center">
+
+                <div class="card-body">
+
+                    <i class="bi bi-download display-3 text-success"></i>
+
+                    <h2>{{ total_downloads }}</h2>
+
+                    <p>Total Downloads</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card shadow border-0 text-center">
+
+                <div class="card-body">
+
+                    <i class="bi bi-shield-lock-fill display-3 text-danger"></i>
+
+                    <h2>{{ total_logs }}</h2>
+
+                    <p>Security Logs</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card shadow border-0 text-center">
+
+                <div class="card-body">
+
+                    <i class="bi bi-patch-check-fill display-3 text-info"></i>
+
+                    <h2>{{ total_verified }}</h2>
+
+                    <p>Verified Files</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card shadow border-0 text-center">
+
+                <div class="card-body">
+
+                    <i class="bi bi-trash-fill display-3 text-secondary"></i>
+
+                    <h2>{{ total_deleted }}</h2>
+
+                    <p>Deleted Files</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <hr class="my-5">
+
+    <div class="alert alert-success text-center">
+
+        <h4>
+
+            <i class="bi bi-check-circle-fill"></i>
+
+            Cloud Security System Status
+
+        </h4>
+
+        <h2 class="text-success">
+
+            SECURE
+
+        </h2>
+
+        <p>
+
+            All security services are functioning normally.
+
+        </p>
+
+    </div>
+
+    <div class="text-center mt-5">
+
+        <a href="/admin-dashboard"
+           class="btn btn-primary btn-lg">
+
+            <i class="bi bi-speedometer2"></i>
+
+            Admin Dashboard
+
+        </a>
+
+        <a href="/security-analytics"
+           class="btn btn-success btn-lg">
+
+            <i class="bi bi-bar-chart-fill"></i>
+
+            Security Analytics
+
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

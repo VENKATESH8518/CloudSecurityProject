@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="text-center mb-5">
+        <h1 class="text-primary fw-bold">
+            <i class="bi bi-hdd-fill"></i>
+            System Backup & Recovery
+        </h1>
+
+        <p class="text-muted">
+            Backup information for the Cloud Security System
+        </p>
+    </div>
+
+    <div class="row g-4">
+
+        <div class="col-md-4">
+            <div class="card shadow text-center">
+                <div class="card-body">
+                    <i class="bi bi-people-fill display-4 text-primary"></i>
+                    <h2>{{ total_users }}</h2>
+                    <h5>Total Users</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow text-center">
+                <div class="card-body">
+                    <i class="bi bi-folder-fill display-4 text-warning"></i>
+                    <h2>{{ total_files }}</h2>
+                    <h5>Encrypted Files</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow text-center">
+                <div class="card-body">
+                    <i class="bi bi-shield-lock-fill display-4 text-success"></i>
+                    <h2>{{ total_logs }}</h2>
+                    <h5>Security Logs</h5>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="card shadow mt-5">
+
+        <div class="card-header bg-primary text-white">
+            <h4>Backup Features</h4>
+        </div>
+
+        <div class="card-body">
+
+            <ul class="list-group list-group-flush">
+
+                <li class="list-group-item">✅ User Database Backup</li>
+
+                <li class="list-group-item">✅ Security Log Backup</li>
+
+                <li class="list-group-item">✅ Encrypted File Backup</li>
+
+                <li class="list-group-item">✅ Metadata Backup</li>
+
+                <li class="list-group-item">✅ Recovery Support</li>
+
+                <li class="list-group-item">✅ Secure Storage</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+    <div class="card shadow mt-4">
+
+        <div class="card-header bg-success text-white">
+            <h4>Recovery Process</h4>
+        </div>
+
+        <div class="card-body">
+
+            <ol>
+
+                <li>Verify Administrator Login</li>
+
+                <li>Restore Database</li>
+
+                <li>Recover Encrypted Files</li>
+
+                <li>Restore Security Logs</li>
+
+                <li>Verify File Integrity (SHA-256)</li>
+
+                <li>Restart Cloud Security System</li>
+
+            </ol>
+
+        </div>
+
+    </div>
+
+    <div class="alert alert-success mt-5 text-center">
+
+        <h4>
+            <i class="bi bi-check-circle-fill"></i>
+            Backup System Ready
+        </h4>
+
+        <p>
+            All important data can be securely backed up and restored whenever required.
+        </p>
+
+    </div>
+
+    <div class="text-center mt-4">
+
+        <a href="/project-report" class="btn btn-secondary btn-lg">
+            <i class="bi bi-arrow-left-circle"></i>
+            Back to Project Report
+        </a>
+
+        <a href="/project-completion" class="btn btn-success btn-lg">
+    <i class="bi bi-award-fill"></i>
+    Complete Project
+</a>
+
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,996 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="py-5">
+
+<div class="container">
+
+<!-- Dashboard Header -->
+
+<div class="card shadow-lg border-0 mb-5">
+
+<div class="card-body bg-dark text-white text-center p-5 rounded">
+
+<i class="bi bi-person-circle display-1 text-info"></i>
+
+<h1 class="display-5 fw-bold mt-3">
+
+User Dashboard
+
+</h1>
+
+<p class="lead">
+
+Welcome,
+
+<span class="text-warning">
+
+{{ session.username }}
+
+</span>
+
+</p>
+
+<p>
+
+Manage your encrypted files securely using AES-256 Encryption,
+SHA-256 Integrity Verification and Secure Cloud Storage.
+
+</p>
+
+</div>
+
+</div>
+
+<!-- Statistics -->
+
+<div class="row g-4 mb-5">
+
+<div class="col-lg-3 col-md-6">
+
+<div class="card border-0 shadow h-100 bg-primary text-white">
+
+<div class="card-body text-center">
+
+<i class="bi bi-folder-fill display-3"></i>
+
+<h1 class="mt-3">
+
+{{ total_files }}
+
+</h1>
+
+<h5>
+
+Uploaded Files
+
+</h5>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6">
+
+<div class="card border-0 shadow h-100 bg-success text-white">
+
+<div class="card-body text-center">
+
+<i class="bi bi-cloud-check-fill display-3"></i>
+
+<h1 class="mt-3">
+
+{{ verified_files }}
+
+</h1>
+
+<h5>
+
+Verified Files
+
+</h5>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6">
+
+<div class="card border-0 shadow h-100 bg-warning text-dark">
+
+<div class="card-body text-center">
+
+<i class="bi bi-download display-3"></i>
+
+<h1 class="mt-3">
+
+{{ downloads }}
+
+</h1>
+
+<h5>
+
+Downloads
+
+</h5>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6">
+
+<div class="card border-0 shadow h-100 bg-danger text-white">
+
+<div class="card-body text-center">
+
+<i class="bi bi-shield-lock-fill display-3"></i>
+
+<h1 class="mt-3">
+
+100%
+
+</h1>
+
+<h5>
+
+Security Level
+
+</h5>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Quick Actions -->
+
+<h2 class="text-info mb-4">
+
+<i class="bi bi-lightning-charge-fill"></i>
+
+Quick Actions
+
+</h2>
+
+<div class="row g-4">
+
+<!-- Upload -->
+
+<div class="col-lg-4">
+
+<div class="card shadow border-0 h-100">
+
+<div class="card-body text-center">
+
+<i class="bi bi-cloud-upload-fill display-2 text-success"></i>
+
+<h3 class="mt-3">
+
+Upload File
+
+</h3>
+
+<p>
+
+Upload a document securely using AES-256 Encryption.
+
+</p>
+
+<a
+
+href="/upload"
+
+class="btn btn-success w-100">
+
+<i class="bi bi-upload"></i>
+
+Upload
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Files -->
+
+<div class="col-lg-4">
+
+<div class="card shadow border-0 h-100">
+
+<div class="card-body text-center">
+
+<i class="bi bi-folder2-open display-2 text-warning"></i>
+
+<h3 class="mt-3">
+
+My Files
+
+</h3>
+
+<p>
+
+View, verify and download encrypted files.
+
+</p>
+
+<a
+
+href="/files"
+
+class="btn btn-warning w-100 text-dark">
+
+<i class="bi bi-folder-fill"></i>
+
+View Files
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Logs -->
+
+<div class="col-lg-4">
+
+<div class="card shadow border-0 h-100">
+
+<div class="card-body text-center">
+
+<i class="bi bi-journal-text display-2 text-danger"></i>
+
+<h3 class="mt-3">
+
+Security Logs
+
+</h3>
+
+<p>
+
+View all upload, verification and download activities.
+
+</p>
+
+<a
+
+href="/security-logs"
+
+class="btn btn-danger w-100">
+
+<i class="bi bi-list-check"></i>
+
+View Logs
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<!-- Recent Uploaded Files -->
+
+<div class="mt-5">
+
+<h2 class="text-info mb-4">
+
+<i class="bi bi-clock-history"></i>
+
+Recent Uploaded Files
+
+</h2>
+
+<div class="card shadow-lg border-0">
+
+<div class="card-body">
+
+<div class="table-responsive">
+
+<table class="table table-hover table-striped align-middle">
+
+<thead class="table-dark">
+
+<tr>
+
+<th>ID</th>
+
+<th>Filename</th>
+
+<th>SHA-256 Hash</th>
+
+<th>Uploaded</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+{% if files %}
+
+{% for file in files %}
+
+<tr>
+
+<td>{{ file.id }}</td>
+
+<td>
+
+<i class="bi bi-file-earmark-lock-fill text-primary"></i>
+
+{{ file.original_filename }}
+
+</td>
+
+<td style="font-size:12px;">
+
+{{ file.sha256_hash }}
+
+</td>
+
+<td>
+
+{{ file.upload_time }}
+
+</td>
+
+<td>
+
+<a href="/verify/{{ file.id }}"
+
+class="btn btn-success btn-sm">
+
+<i class="bi bi-check-circle-fill"></i>
+
+Verify
+
+</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+{% else %}
+
+<tr>
+
+<td colspan="5" class="text-center text-danger">
+
+No files uploaded yet.
+
+</td>
+
+</tr>
+
+{% endif %}
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Security Features -->
+
+<div class="mt-5">
+
+<h2 class="text-info mb-4">
+
+<i class="bi bi-shield-lock-fill"></i>
+
+Cloud Security Features
+
+</h2>
+
+<div class="row g-4">
+
+<div class="col-md-3">
+
+<div class="card border-0 shadow text-center h-100">
+
+<div class="card-body">
+
+<i class="bi bi-lock-fill display-3 text-primary"></i>
+
+<h5 class="mt-3">
+
+AES-256
+
+</h5>
+
+<p>
+
+Advanced file encryption for maximum confidentiality.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="card border-0 shadow text-center h-100">
+
+<div class="card-body">
+
+<i class="bi bi-fingerprint display-3 text-success"></i>
+
+<h5 class="mt-3">
+
+SHA-256
+
+</h5>
+
+<p>
+
+File integrity verification to detect tampering.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="card border-0 shadow text-center h-100">
+
+<div class="card-body">
+
+<i class="bi bi-key-fill display-3 text-warning"></i>
+
+<h5 class="mt-3">
+
+OTP Security
+
+</h5>
+
+<p>
+
+Additional authentication layer for secure access.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="card border-0 shadow text-center h-100">
+
+<div class="card-body">
+
+<i class="bi bi-cloud-check-fill display-3 text-danger"></i>
+
+<h5 class="mt-3">
+
+Cloud Storage
+
+</h5>
+
+<p>
+
+Secure encrypted cloud storage with controlled access.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Cloud Security Workflow -->
+
+<div class="mt-5">
+
+<div class="card shadow-lg border-0">
+
+<div class="card-header bg-info text-white">
+
+<h3>
+
+<i class="bi bi-diagram-3-fill"></i>
+
+Cloud Security Workflow
+
+</h3>
+
+</div>
+
+<div class="card-body">
+
+<div class="row text-center">
+
+<div class="col-md-2">
+
+<i class="bi bi-upload display-4 text-primary"></i>
+
+<h6 class="mt-2">
+
+Upload
+
+</h6>
+
+</div>
+
+<div class="col-md-2">
+
+<i class="bi bi-lock-fill display-4 text-success"></i>
+
+<h6 class="mt-2">
+
+Encrypt
+
+</h6>
+
+</div>
+
+<div class="col-md-2">
+
+<i class="bi bi-cloud-fill display-4 text-info"></i>
+
+<h6 class="mt-2">
+
+Store
+
+</h6>
+
+</div>
+
+<div class="col-md-2">
+
+<i class="bi bi-shield-check display-4 text-warning"></i>
+
+<h6 class="mt-2">
+
+Verify
+
+</h6>
+
+</div>
+
+<div class="col-md-2">
+
+<i class="bi bi-download display-4 text-danger"></i>
+
+<h6 class="mt-2">
+
+Download
+
+</h6>
+
+</div>
+
+<div class="col-md-2">
+
+<i class="bi bi-unlock-fill display-4 text-secondary"></i>
+
+<h6 class="mt-2">
+
+Decrypt
+
+</h6>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<!-- User Profile -->
+
+<div class="mt-5">
+
+<div class="row">
+
+<div class="col-lg-4">
+
+<div class="card shadow-lg border-0">
+
+<div class="card-header bg-primary text-white">
+
+<h3>
+
+<i class="bi bi-person-circle"></i>
+
+User Profile
+
+</h3>
+
+</div>
+
+<div class="card-body text-center">
+
+<i class="bi bi-person-fill display-1 text-primary"></i>
+
+<h4 class="mt-3">
+
+{{ session.username }}
+
+</h4>
+
+<p class="text-muted">
+
+Authorized Cloud User
+
+</p>
+
+<hr>
+
+<p>
+
+<i class="bi bi-shield-check text-success"></i>
+
+Account Status
+
+</p>
+
+<span class="badge bg-success">
+
+ACTIVE
+
+</span>
+
+<br><br>
+
+<p>
+
+<i class="bi bi-calendar-check text-primary"></i>
+
+Secure Cloud Access Enabled
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Project Information -->
+
+<div class="col-lg-8">
+
+<div class="card shadow-lg border-0">
+
+<div class="card-header bg-success text-white">
+
+<h3>
+
+<i class="bi bi-cloud-check-fill"></i>
+
+Cloud Security Project
+
+</h3>
+
+</div>
+
+<div class="card-body">
+
+<p class="lead">
+
+This project provides a highly secure cloud storage environment using modern cryptographic algorithms and authentication mechanisms.
+
+</p>
+
+<div class="row mt-4">
+
+<div class="col-md-6">
+
+<ul class="list-group">
+
+<li class="list-group-item">
+
+✅ AES-256 File Encryption
+
+</li>
+
+<li class="list-group-item">
+
+✅ SHA-256 Integrity Verification
+
+</li>
+
+<li class="list-group-item">
+
+✅ OTP Authentication
+
+</li>
+
+<li class="list-group-item">
+
+✅ Secure File Upload
+
+</li>
+
+</ul>
+
+</div>
+
+<div class="col-md-6">
+
+<ul class="list-group">
+
+<li class="list-group-item">
+
+✅ Secure File Download
+
+</li>
+
+<li class="list-group-item">
+
+✅ Role Based Access
+
+</li>
+
+<li class="list-group-item">
+
+✅ Security Logs
+
+</li>
+
+<li class="list-group-item">
+
+✅ Cloud Monitoring
+
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- System Status -->
+
+<div class="mt-5">
+
+<h2 class="text-info mb-4">
+
+<i class="bi bi-speedometer2"></i>
+
+System Status
+
+</h2>
+
+<div class="row">
+
+<div class="col-md-3">
+
+<div class="card border-0 shadow text-center bg-success text-white">
+
+<div class="card-body">
+
+<i class="bi bi-check-circle-fill display-4"></i>
+
+<h4 class="mt-3">
+
+Online
+
+</h4>
+
+<p>
+
+Cloud Server
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="card border-0 shadow text-center bg-primary text-white">
+
+<div class="card-body">
+
+<i class="bi bi-shield-fill-check display-4"></i>
+
+<h4 class="mt-3">
+
+Protected
+
+</h4>
+
+<p>
+
+Security Status
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="card border-0 shadow text-center bg-warning">
+
+<div class="card-body">
+
+<i class="bi bi-file-earmark-lock-fill display-4"></i>
+
+<h4 class="mt-3">
+
+Encrypted
+
+</h4>
+
+<p>
+
+Stored Files
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="card border-0 shadow text-center bg-danger text-white">
+
+<div class="card-body">
+
+<i class="bi bi-database-lock display-4"></i>
+
+<h4 class="mt-3">
+
+Secure
+
+</h4>
+
+<p>
+
+Database
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Security Tips -->
+
+<div class="card shadow-lg border-0 mt-5">
+
+<div class="card-header bg-dark text-white">
+
+<h3>
+
+<i class="bi bi-lightbulb-fill"></i>
+
+Security Recommendations
+
+</h3>
+
+</div>
+
+<div class="card-body">
+
+<div class="row">
+
+<div class="col-md-6">
+
+<ul>
+
+<li>Use strong passwords.</li>
+
+<li>Enable OTP verification.</li>
+
+<li>Verify files before downloading.</li>
+
+<li>Never share encryption keys.</li>
+
+</ul>
+
+</div>
+
+<div class="col-md-6">
+
+<ul>
+
+<li>Monitor security logs regularly.</li>
+
+<li>Keep backups of important files.</li>
+
+<li>Upload trusted files only.</li>
+
+<li>Logout after every session.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Logout -->
+
+<div class="text-center mt-5">
+
+<a href="/logout"
+
+class="btn btn-danger btn-lg px-5 shadow">
+
+<i class="bi bi-box-arrow-right"></i>
+
+Logout Securely
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <h1 class="text-center text-primary fw-bold mb-5">
+
+        <i class="bi bi-bar-chart-fill"></i>
+
+        Download Analytics Dashboard
+
+    </h1>
+
+    <div class="card shadow-lg">
+
+        <div class="card-body">
+
+            <canvas id="downloadChart" height="120"></canvas>
+
+        </div>
+
+    </div>
+
+    <div class="text-center mt-5">
+
+        <a href="/download-history"
+           class="btn btn-dark btn-lg">
+
+            <i class="bi bi-arrow-left-circle"></i>
+
+            Back to Download History
+
+        </a>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+
+const ctx = document.getElementById('downloadChart');
+
+new Chart(ctx, {
+
+    type: 'bar',
+
+    data: {
+
+        labels: {{ labels|tojson }},
+
+        datasets: [{
+
+            label: 'Downloads',
+
+            data: {{ values|tojson }},
+
+            backgroundColor: '#0d6efd'
+
+        }]
+
+    },
+
+    options: {
+
+        responsive: true,
+
+        plugins: {
+
+            legend: {
+
+                display: true
+
+            }
+
+        }
+
+    }
+
+});
+
+</script>
+
+{% endblock %}

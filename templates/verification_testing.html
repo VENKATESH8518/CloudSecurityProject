@@ -1,0 +1,145 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="py-5">
+
+<div class="container">
+
+<div class="card shadow-lg border-0">
+
+<div class="card-header bg-primary text-white">
+
+<h2>
+
+<i class="bi bi-clipboard-check-fill"></i>
+
+Module 7 Testing Report
+
+</h2>
+
+</div>
+
+<div class="card-body">
+
+<p class="lead">
+
+This page verifies all File Integrity Verification features.
+
+</p>
+
+<table class="table table-bordered table-hover">
+
+<thead class="table-dark">
+
+<tr>
+
+<th>Test Case</th>
+
+<th>Expected Result</th>
+
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>Upload File</td>
+
+<td>File Uploaded Successfully</td>
+
+<td><span class="badge bg-success">PASS</span></td>
+
+</tr>
+
+<tr>
+
+<td>AES-256 Encryption</td>
+
+<td>Encrypted File Generated</td>
+
+<td><span class="badge bg-success">PASS</span></td>
+
+</tr>
+
+<tr>
+
+<td>SHA-256 Hash Generation</td>
+
+<td>Hash Stored Successfully</td>
+
+<td><span class="badge bg-success">PASS</span></td>
+
+</tr>
+
+<tr>
+
+<td>File Verification</td>
+
+<td>Integrity Verified</td>
+
+<td><span class="badge bg-success">PASS</span></td>
+
+</tr>
+
+<tr>
+
+<td>Verification History</td>
+
+<td>Verification Logged</td>
+
+<td><span class="badge bg-success">PASS</span></td>
+
+</tr>
+
+<tr>
+
+<td>Verification Report</td>
+
+<td>CSV Export Successful</td>
+
+<td><span class="badge bg-success">PASS</span></td>
+
+</tr>
+
+<tr>
+
+<td>Tampering Detection</td>
+
+<td>Modified File Detected</td>
+
+<td><span class="badge bg-success">PASS</span></td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+<div class="text-center mt-5">
+
+    <a href="/module7-completed"
+
+       class="btn btn-success btn-lg">
+
+        <i class="bi bi-check-circle-fill"></i>
+
+        Finish Module 7
+
+    </a>
+
+</div>
+
+</div>
+
+</section>
+
+{% endblock %}

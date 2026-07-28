@@ -1,0 +1,130 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="card shadow-lg border-0">
+
+        <div class="card-body text-center">
+
+            <i class="bi bi-check-circle-fill text-success"
+               style="font-size:90px;"></i>
+
+            <h1 class="text-success fw-bold mt-3">
+                Module 8 Completed Successfully
+            </h1>
+
+            <h4 class="text-muted mb-4">
+                Secure File Download Module
+            </h4>
+
+            <p class="lead">
+                The Secure File Download Module has been successfully
+                implemented and tested.
+            </p>
+
+            <hr>
+
+            <div class="row mt-4">
+
+                <div class="col-md-3">
+                    <div class="card border-primary shadow-sm">
+                        <div class="card-body">
+                            <i class="bi bi-download text-primary display-5"></i>
+                            <h5 class="mt-2">Secure Download</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card border-success shadow-sm">
+                        <div class="card-body">
+                            <i class="bi bi-file-lock2-fill text-success display-5"></i>
+                            <h5 class="mt-2">AES-256 Decryption</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card border-warning shadow-sm">
+                        <div class="card-body">
+                            <i class="bi bi-clock-history text-warning display-5"></i>
+                            <h5 class="mt-2">Download History</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card border-danger shadow-sm">
+                        <div class="card-body">
+                            <i class="bi bi-file-earmark-pdf-fill text-danger display-5"></i>
+                            <h5 class="mt-2">PDF Reports</h5>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <hr class="mt-5">
+
+            <h3 class="text-primary">
+                Module 8 Features Completed
+            </h3>
+
+            <div class="row mt-4 text-start">
+
+                <div class="col-md-6">
+
+                    <ul class="list-group">
+
+                        <li class="list-group-item">✅ Secure File Download</li>
+
+                        <li class="list-group-item">✅ AES-256 File Decryption</li>
+
+                        <li class="list-group-item">✅ Download Activity Logging</li>
+
+                        <li class="list-group-item">✅ Download History Dashboard</li>
+
+                    </ul>
+
+                </div>
+
+                <div class="col-md-6">
+
+                    <ul class="list-group">
+
+                        <li class="list-group-item">✅ Download Analytics</li>
+
+                        <li class="list-group-item">✅ Download Reports</li>
+
+                        <li class="list-group-item">✅ PDF Report Export</li>
+
+                        <li class="list-group-item">✅ Secure Monitoring</li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <div class="mt-5">
+
+                <a href="/admin-dashboard"
+                   class="btn btn-success btn-lg">
+
+                    <i class="bi bi-speedometer2"></i>
+
+                    Back to Dashboard
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

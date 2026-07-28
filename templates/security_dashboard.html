@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <h1 class="text-center text-info fw-bold mb-5">
+        <i class="bi bi-shield-lock-fill"></i>
+        Security Dashboard
+    </h1>
+
+    <div class="row g-4">
+
+        <div class="col-md-3">
+            <div class="card bg-primary text-white shadow text-center">
+                <div class="card-body">
+                    <i class="bi bi-journal-text display-4"></i>
+                    <h2>{{ total_logs }}</h2>
+                    <p>Total Logs</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card bg-success text-white shadow text-center">
+                <div class="card-body">
+                    <i class="bi bi-box-arrow-in-right display-4"></i>
+                    <h2>{{ total_logins }}</h2>
+                    <p>Login Activities</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card bg-warning shadow text-center">
+                <div class="card-body">
+                    <i class="bi bi-upload display-4"></i>
+                    <h2>{{ total_uploads }}</h2>
+                    <p>File Uploads</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card bg-info text-white shadow text-center">
+                <div class="card-body">
+                    <i class="bi bi-download display-4"></i>
+                    <h2>{{ total_downloads }}</h2>
+                    <p>Downloads</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row mt-4">
+
+        <div class="col-md-4 mx-auto">
+
+            <div class="card bg-danger text-white shadow text-center">
+
+                <div class="card-body">
+
+                    <i class="bi bi-shield-check display-4"></i>
+
+                    <h2>{{ total_verifications }}</h2>
+
+                    <p>File Verifications</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="card shadow-lg mt-5">
+
+        <div class="card-header bg-dark text-white">
+
+            <h4>
+                <i class="bi bi-clock-history"></i>
+                Recent Security Logs
+            </h4>
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="table-responsive">
+
+                <table class="table table-bordered table-hover">
+
+                    <thead class="table-dark">
+
+                        <tr>
+
+                            <th>ID</th>
+
+                            <th>Username</th>
+
+                            <th>Activity</th>
+
+                            <th>IP Address</th>
+
+                            <th>Date & Time</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                    {% for log in recent_logs %}
+
+                        <tr>
+
+                            <td>{{ log.id }}</td>
+
+                            <td>{{ log.username }}</td>
+
+                            <td>{{ log.activity }}</td>
+
+                            <td>{{ log.ip_address }}</td>
+
+                            <td>{{ log.log_time }}</td>
+
+                        </tr>
+
+                    {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="text-center mt-5">
+
+        <a href="/admin-dashboard" class="btn btn-dark btn-lg">
+
+            <i class="bi bi-arrow-left-circle"></i>
+
+            Back to Admin Dashboard
+
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

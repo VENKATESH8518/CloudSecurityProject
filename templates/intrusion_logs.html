@@ -1,0 +1,397 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="py-5">
+
+<div class="container">
+
+    <!-- Page Heading -->
+
+    <h1 class="text-center text-danger fw-bold mb-3">
+
+        <i class="bi bi-shield-exclamation"></i>
+
+        Intrusion Logs
+
+    </h1>
+
+    <p class="text-center text-muted mb-5">
+
+        View all failed login attempts detected by the Intrusion Detection System.
+
+    </p>
+
+    <!-- Security Alert Summary -->
+
+<div class="alert
+{% if security_status == 'Secure' %}
+alert-success
+{% elif security_status == 'Warning' %}
+alert-warning
+{% else %}
+alert-danger
+{% endif %}
+shadow-lg mb-4">
+
+<h4>
+
+<i class="bi bi-shield-check"></i>
+
+Current Security Status :
+<strong>{{ security_status }}</strong>
+
+</h4>
+
+{% if security_status == "Secure" %}
+
+<p class="mb-0">
+
+No suspicious login activity detected today.
+
+</p>
+
+{% elif security_status == "Warning" %}
+
+<p class="mb-0">
+
+Some failed login attempts were detected today.
+
+Please monitor the system.
+
+</p>
+
+{% else %}
+
+<p class="mb-0">
+
+High number of intrusion attempts detected today.
+
+Immediate investigation is recommended.
+
+</p>
+
+{% endif %}
+
+</div>
+
+
+
+
+    <!-- ================= Intrusion Statistics ================= -->
+
+    <div class="row g-4 mb-5">
+
+        <div class="col-lg-3 col-md-6">
+
+            <div class="card bg-danger text-white shadow-lg border-0">
+
+                <div class="card-body text-center">
+
+                    <i class="bi bi-shield-fill-exclamation display-4"></i>
+
+                    <h2 class="fw-bold mt-3">
+
+                        {{ total_intrusions }}
+
+                    </h2>
+
+                    <p>Total Intrusions</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+
+            <div class="card bg-warning shadow-lg border-0">
+
+                <div class="card-body text-center">
+
+                    <i class="bi bi-calendar-event display-4"></i>
+
+                    <h2 class="fw-bold mt-3">
+
+                        {{ today_intrusions }}
+
+                    </h2>
+
+                    <p>Today's Alerts</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+
+            <div class="card bg-info text-white shadow-lg border-0">
+
+                <div class="card-body text-center">
+
+                    <i class="bi bi-globe display-4"></i>
+
+                    <h2 class="fw-bold mt-3">
+
+                        {{ unique_ips }}
+
+                    </h2>
+
+                    <p>Unique IPs</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+
+            <div class="card bg-success text-white shadow-lg border-0">
+
+                <div class="card-body text-center">
+
+                    <i class="bi bi-people-fill display-4"></i>
+
+                    <h2 class="fw-bold mt-3">
+
+                        {{ unique_users }}
+
+                    </h2>
+
+                    <p>Unique Users</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ================= Search & Date Filter ================= -->
+
+    <div class="card shadow border-0 mb-4">
+
+        <div class="card-body">
+
+            <form method="GET" action="/intrusion-logs">
+
+                <div class="row g-3">
+
+                    <div class="col-md-6">
+
+                        <input
+                        type="text"
+                        name="search"
+                        class="form-control form-control-lg"
+                        placeholder="Search Username, IP Address or Activity..."
+                        value="{{ search }}">
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <input
+                        type="date"
+                        name="date"
+                        class="form-control form-control-lg"
+                        value="{{ selected_date }}">
+
+                    </div>
+
+                    <div class="col-md-2">
+
+                        <button
+                        type="submit"
+                        class="btn btn-danger btn-lg w-100">
+
+                            <i class="bi bi-search"></i>
+
+                            Search
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- Clear Filters -->
+
+    <div class="d-flex justify-content-end gap-2 mb-4">
+
+    <a href="/intrusion-logs"
+       class="btn btn-secondary">
+
+        <i class="bi bi-arrow-clockwise"></i>
+
+        Clear Filters
+
+    </a>
+
+    <a href="/export-intrusion-logs"
+       class="btn btn-success">
+
+        <i class="bi bi-download"></i>
+
+        Export CSV
+
+    </a>
+
+    <a href="/clear-intrusion-logs"
+       class="btn btn-danger"
+       onclick="return confirm('Are you sure you want to clear all intrusion logs?');">
+
+        <i class="bi bi-trash-fill"></i>
+
+        Clear Logs
+
+    </a>
+
+
+    <a href="/blocked-ips"
+   class="btn btn-dark">
+
+    <i class="bi bi-ban"></i>
+
+    Blocked IPs
+
+</a>
+
+</div>
+
+
+    <!-- ================= Intrusion Logs Table ================= -->
+
+    <div class="card shadow-lg border-0">
+
+        <div class="card-header bg-dark text-white">
+
+            <h4>
+
+                <i class="bi bi-list-ul"></i>
+
+                Failed Login Attempts
+
+            </h4>
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="table-responsive">
+
+                <table class="table table-bordered table-hover align-middle">
+
+                    <thead class="table-danger">
+
+                        <tr>
+
+                            <th>ID</th>
+
+                            <th>Username</th>
+
+                            <th>Activity</th>
+
+                            <th>IP Address</th>
+
+                            <th>Date & Time</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                    {% if logs %}
+
+                        {% for log in logs %}
+
+                        <tr>
+
+                            <td>{{ log.id }}</td>
+
+                            <td>
+
+                                <i class="bi bi-person-circle"></i>
+
+                                {{ log.username }}
+
+                            </td>
+
+                            <td>
+
+                                <span class="badge bg-danger">
+
+                                    {{ log.activity }}
+
+                                </span>
+
+                            </td>
+
+                            <td>{{ log.ip_address }}</td>
+
+                            <td>{{ log.log_time }}</td>
+
+                        </tr>
+
+                        {% endfor %}
+
+                    {% else %}
+
+                        <tr>
+
+                            <td colspan="5" class="text-center text-danger">
+
+                                <h5>
+
+                                    No intrusion attempts found.
+
+                                </h5>
+
+                            </td>
+
+                        </tr>
+
+                    {% endif %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Back Button -->
+
+    <div class="text-center mt-5">
+
+        <a href="/intrusion-detection"
+
+        class="btn btn-primary btn-lg">
+
+            <i class="bi bi-arrow-left-circle"></i>
+
+            Back to Intrusion Dashboard
+
+        </a>
+
+    </div>
+
+</div>
+
+</section>
+
+{% endblock %}

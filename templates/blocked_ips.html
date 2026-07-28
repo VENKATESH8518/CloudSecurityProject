@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="py-5">
+
+<div class="container">
+
+<h1 class="text-center text-danger mb-4">
+
+<i class="bi bi-shield-fill-x"></i>
+
+Blocked IP Addresses
+
+</h1>
+
+<p class="text-center text-muted">
+
+IPs with three or more failed login attempts.
+
+</p>
+
+<div class="card shadow-lg border-0">
+
+<div class="card-header bg-danger text-white">
+
+<h4>
+
+<i class="bi bi-ban"></i>
+
+Blocked IP List
+
+</h4>
+
+</div>
+
+<div class="card-body">
+
+<div class="table-responsive">
+
+<table class="table table-bordered table-hover">
+
+<thead class="table-dark">
+
+<tr>
+
+<th>#</th>
+
+<th>IP Address</th>
+
+<th>Failed Attempts</th>
+
+<th>Last Attempt</th>
+
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+{% if blocked_ips %}
+
+{% for ip in blocked_ips %}
+
+<tr>
+
+<td>{{ loop.index }}</td>
+
+<td>{{ ip.ip_address }}</td>
+
+<td>{{ ip.attempts }}</td>
+
+<td>{{ ip.last_attempt }}</td>
+
+<td>
+
+<span class="badge bg-danger">
+
+Blocked
+
+</span>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+{% else %}
+
+<tr>
+
+<td colspan="5" class="text-center text-success">
+
+No blocked IP addresses found.
+
+</td>
+
+</tr>
+
+{% endif %}
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="text-center mt-4">
+
+<a href="/intrusion-logs" class="btn btn-primary">
+
+<i class="bi bi-arrow-left-circle"></i>
+
+Back to Intrusion Logs
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+{% endblock %}

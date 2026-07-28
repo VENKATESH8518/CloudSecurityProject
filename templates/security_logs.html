@@ -1,0 +1,307 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="py-5">
+
+<div class="container">
+
+    <!-- Page Heading -->
+
+    <h1 class="text-center text-danger fw-bold mb-3">
+
+        <i class="bi bi-shield-exclamation"></i>
+
+        Intrusion Logs
+
+    </h1>
+
+    <p class="text-center text-muted mb-5">
+
+        View all failed login attempts detected by the Intrusion Detection System.
+
+    </p>
+
+    <!-- ================== Intrusion Statistics ================== -->
+
+    <div class="row g-4 mb-5">
+
+        <div class="col-lg-3 col-md-6">
+
+            <div class="card bg-danger text-white shadow-lg border-0">
+
+                <div class="card-body text-center">
+
+                    <i class="bi bi-shield-fill-exclamation display-4"></i>
+
+                    <h2 class="fw-bold mt-2">
+
+                        {{ total_intrusions }}
+
+                    </h2>
+
+                    <p>Total Intrusions</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+
+            <div class="card bg-warning shadow-lg border-0">
+
+                <div class="card-body text-center">
+
+                    <i class="bi bi-calendar-event display-4"></i>
+
+                    <h2 class="fw-bold mt-2">
+
+                        {{ today_intrusions }}
+
+                    </h2>
+
+                    <p>Today's Alerts</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+
+            <div class="card bg-info text-white shadow-lg border-0">
+
+                <div class="card-body text-center">
+
+                    <i class="bi bi-globe display-4"></i>
+
+                    <h2 class="fw-bold mt-2">
+
+                        {{ unique_ips }}
+
+                    </h2>
+
+                    <p>Unique IPs</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+
+            <div class="card bg-success text-white shadow-lg border-0">
+
+                <div class="card-body text-center">
+
+                    <i class="bi bi-people-fill display-4"></i>
+
+                    <h2 class="fw-bold mt-2">
+
+                        {{ unique_users }}
+
+                    </h2>
+
+                    <p>Unique Users</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ================== Search ================== -->
+
+    <div class="card shadow border-0 mb-4">
+
+        <div class="card-body">
+
+            <form method="GET" action="/intrusion-logs">
+
+                <div class="row">
+
+                    <div class="col-md-10">
+
+                        <input
+                        type="text"
+                        name="search"
+                        class="form-control form-control-lg"
+                        placeholder="Search Username, IP Address or Activity..."
+                        value="{{ search }}">
+
+                    </div>
+
+                    <div class="col-md-2">
+
+                        <button
+                        type="submit"
+                        class="btn btn-danger btn-lg w-100">
+
+                            <i class="bi bi-search"></i>
+
+                            Search
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- Clear Search -->
+
+    <div class="text-end mb-3">
+
+        <a href="/intrusion-logs"
+        class="btn btn-secondary">
+
+            <i class="bi bi-arrow-clockwise"></i>
+
+            Clear Search
+
+        </a>
+
+    </div>
+
+
+
+    <!-- ================== Logs Table ================== -->
+
+    <div class="card shadow-lg border-0">
+
+        <div class="card-header bg-dark text-white">
+
+            <h4>
+
+                <i class="bi bi-list-ul"></i>
+
+                Failed Login Attempts
+
+            </h4>
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="table-responsive">
+
+                <table 
+                    id="securityTable"
+                    class="table table-bordered table-hover>"
+
+                    <thead class="table-dark">
+
+                        <tr>
+
+                            <th>ID</th>
+
+                            <th>Username</th>
+
+                            <th>Activity</th>
+
+                            <th>IP Address</th>
+
+                            <th>Date & Time</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                    {% if logs %}
+
+                        {% for log in logs %}
+
+                        <tr>
+
+                            <td>{{ log.id }}</td>
+
+                            <td>
+
+                                <i class="bi bi-person-circle"></i>
+
+                                {{ log.username }}
+
+                            </td>
+
+                            <td>
+
+                                <span class="badge bg-danger">
+
+                                    {{ log.activity }}
+
+                                </span>
+
+                            </td>
+
+                            <td>{{ log.ip_address }}</td>
+
+                            <td>{{ log.log_time }}</td>
+
+                        </tr>
+
+                        {% endfor %}
+
+                    {% else %}
+
+                        <tr>
+
+                            <td colspan="5" class="text-center text-danger">
+
+                                <h5>
+
+                                    No intrusion attempts found.
+
+                                </h5>
+
+                            </td>
+
+                        </tr>
+
+                    {% endif %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Back Button -->
+
+    <div class="text-center mt-5">
+
+        <a href="/intrusion-detection"
+
+        class="btn btn-primary btn-lg">
+
+            <i class="bi bi-arrow-left-circle"></i>
+
+            Back to Intrusion Dashboard
+
+        </a>
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+{% endblock %}

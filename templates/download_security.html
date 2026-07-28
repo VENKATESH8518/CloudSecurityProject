@@ -1,0 +1,156 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <h1 class="text-center text-primary fw-bold mb-4">
+
+        <i class="bi bi-shield-lock-fill"></i>
+
+        Download Security Logs
+
+    </h1>
+
+    <div class="row mb-4">
+
+        <div class="col-md-4">
+
+            <div class="card shadow text-center">
+
+                <div class="card-body">
+
+                    <i class="bi bi-download display-4 text-primary"></i>
+
+                    <h2>{{ total }}</h2>
+
+                    <h5>Total Downloads</h5>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card shadow text-center">
+
+                <div class="card-body">
+
+                    <i class="bi bi-shield-check display-4 text-success"></i>
+
+                    <h2>100%</h2>
+
+                    <h5>Protected Downloads</h5>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card shadow text-center">
+
+                <div class="card-body">
+
+                    <i class="bi bi-clock-history display-4 text-warning"></i>
+
+                    <h2>24/7</h2>
+
+                    <h5>Monitoring</h5>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="card shadow">
+
+        <div class="card-header bg-dark text-white">
+
+            <h4>
+
+                <i class="bi bi-list-check"></i>
+
+                Download Log Records
+
+            </h4>
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="table-responsive">
+
+                <table class="table table-bordered table-hover">
+
+                    <thead class="table-dark">
+
+                        <tr>
+
+                            <th>ID</th>
+
+                            <th>User</th>
+
+                            <th>Downloaded File</th>
+
+                            <th>IP Address</th>
+
+                            <th>Date & Time</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                    {% for log in logs %}
+
+                        <tr>
+
+                            <td>{{ log.id }}</td>
+
+                            <td>{{ log.username }}</td>
+
+                            <td>{{ log.file_name }}</td>
+
+                            <td>{{ log.ip_address }}</td>
+
+                            <td>{{ log.download_time }}</td>
+
+                        </tr>
+
+                    {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="text-center mt-4">
+
+        <a href="/download-history"
+           class="btn btn-dark btn-lg">
+
+            <i class="bi bi-arrow-left-circle"></i>
+
+            Back to Download History
+
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

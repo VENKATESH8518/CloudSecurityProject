@@ -1,0 +1,1971 @@
+/* ===========================================
+   GOOGLE FONT & GLOBAL STYLES
+=========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#0f172a;
+    color:#ffffff;
+    overflow-x:hidden;
+}
+
+/* ===========================================
+   LINKS
+=========================================== */
+
+a{
+    text-decoration:none;
+    transition:0.3s ease;
+}
+
+a:hover{
+    text-decoration:none;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+
+.navbar{
+    background: #000000 !important;
+    border-bottom: 2px solid #38bdf8;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.15);
+    padding: 15px 0;
+    z-index: 9999;
+}
+
+.navbar-brand{
+    color: #000000 !important;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.navbar-brand i{
+    color: #0ea5e9 !important;
+}
+
+.navbar-nav .nav-link{
+    color: #ffffff !important;
+    font-weight: 600;
+    margin-left: 18px;
+}
+
+.navbar-nav .nav-link:hover{
+    color: #38bdf8 !important;
+}
+
+.navbar-nav .nav-link:focus{
+    color: #38bdf8 !important;
+}
+
+.navbar-nav .nav-link.active{
+    color:#38bdf8 !important;
+    font-weight:600;
+}
+
+/* ===========================================
+   HERO SECTION
+=========================================== */
+
+.hero{
+
+    background:linear-gradient(
+        135deg,
+        #020617,
+        #0f172a,
+        #1e3a8a
+    );
+
+    color:white;
+
+    padding:100px 0;
+}
+/* ===========================================
+   HEADINGS
+=========================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-weight:700;
+    color:white;
+}
+
+p{
+    color:#cbd5e1;
+}
+
+/* ===========================================
+   CARDS (GENERAL)
+=========================================== */
+
+.card{
+    border:none;
+    border-radius:18px;
+    overflow:hidden;
+    transition:.4s ease;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card-body{
+    padding:30px;
+}
+
+/* ===========================================
+   ICONS
+=========================================== */
+
+.card i{
+    color:#38bdf8;
+    transition:.4s;
+}
+
+.card:hover i{
+    transform:scale(1.15);
+}
+
+/* ===========================================
+   UTILITIES
+=========================================== */
+
+.bg-dark{
+    background:#111827 !important;
+}
+
+.bg-secondary{
+    background:#1e293b !important;
+}
+
+.text-light{
+    color:#d1d5db !important;
+}
+
+.container{
+    max-width:1200px;
+}
+
+/* ===========================================
+   SPACING
+=========================================== */
+
+.py-5{
+    padding-top:90px !important;
+    padding-bottom:90px !important;
+}
+
+.mt-5{
+    margin-top:3rem !important;
+}
+
+.mb-5{
+    margin-bottom:3rem !important;
+}
+/* ==========================================================
+   PART 2C-2A
+   STATISTICS + ABOUT SECTION
+========================================================== */
+
+
+/* ===============================
+   STATISTICS SECTION
+=================================*/
+
+.statistics-section{
+    background:#111827;
+}
+
+.statistics-section .card{
+    background:#1e293b;
+    border:none;
+    border-radius:18px;
+    transition:0.4s ease;
+    cursor:pointer;
+}
+
+.statistics-section .card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 18px 40px rgba(0,0,0,.45);
+
+}
+
+.statistics-section .card-body{
+
+    padding:35px;
+
+}
+
+.statistics-section i{
+
+    font-size:55px;
+
+    color:#38bdf8;
+
+    margin-bottom:15px;
+
+}
+
+.statistics-section h2{
+
+    font-size:38px;
+
+    font-weight:700;
+
+    color:#ffffff;
+
+}
+
+.statistics-section p{
+
+    color:#cbd5e1;
+
+    font-size:17px;
+
+}
+
+
+/* ===============================
+   ABOUT SECTION
+=================================*/
+
+#about{
+
+    background:#0f172a;
+
+}
+
+#about h2{
+
+    font-size:40px;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
+}
+
+#about p{
+
+    font-size:17px;
+
+    line-height:1.9;
+
+    color:#d1d5db;
+
+}
+
+#about img{
+
+    border-radius:20px;
+
+    transition:.5s;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.35);
+
+}
+
+#about img:hover{
+
+    transform:scale(1.03);
+
+}
+
+
+/* ===============================
+   ABOUT LIST
+=================================*/
+
+#about .list-group{
+
+    margin-top:25px;
+
+}
+
+#about .list-group-item{
+
+    background:#111827;
+
+    color:#ffffff;
+
+    border:none;
+
+    margin-bottom:10px;
+
+    border-radius:10px;
+
+    padding:15px 20px;
+
+    transition:.3s;
+
+    font-size:16px;
+
+}
+
+#about .list-group-item:hover{
+
+    background:#1e293b;
+
+    padding-left:28px;
+
+    color:#38bdf8;
+
+}
+
+
+/* ===============================
+   IMAGE CONTAINER
+=================================*/
+
+#about .col-lg-6{
+
+    margin-bottom:20px;
+
+}
+
+
+/* ===============================
+   HEADING DECORATION
+=================================*/
+
+.section-title{
+
+    position:relative;
+
+    display:inline-block;
+
+    padding-bottom:10px;
+
+}
+
+.section-title::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:70px;
+
+    height:4px;
+
+    background:#38bdf8;
+
+    left:0;
+
+    bottom:0;
+
+    border-radius:10px;
+
+}
+
+
+/* ===============================
+   GENERAL CARD EFFECT
+=================================*/
+
+.card{
+
+    transition:all .4s ease;
+
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+
+/* ===============================
+   RESPONSIVE
+=================================*/
+
+@media(max-width:992px){
+
+    #about{
+
+        text-align:center;
+
+    }
+
+    #about img{
+
+        margin-bottom:30px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .statistics-section h2{
+
+        font-size:30px;
+
+    }
+
+    #about h2{
+
+        font-size:32px;
+
+    }
+
+    #about p{
+
+        font-size:16px;
+
+    }
+
+}
+
+@media(max-width:576px){
+
+    #about h2{
+
+        font-size:28px;
+
+    }
+
+    .statistics-section .card{
+
+        margin-bottom:20px;
+
+    }
+
+}
+/*=========================================================
+        FEATURES SECTION
+=========================================================*/
+
+.features-section{
+
+    background:#0f172a;
+
+}
+
+.features-section .card{
+
+    background:#1e293b;
+
+    color:#ffffff;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    transition:.4s ease;
+
+    height:100%;
+
+}
+
+.features-section .card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 18px 40px rgba(0,0,0,.45);
+
+}
+
+.features-section .card-body{
+
+    padding:35px;
+
+}
+
+.features-section i{
+
+    font-size:58px;
+
+    color:#38bdf8;
+
+    margin-bottom:20px;
+
+}
+
+.features-section h4{
+
+    margin-top:15px;
+
+    margin-bottom:15px;
+
+    font-weight:600;
+
+}
+
+.features-section p{
+
+    color:#d1d5db;
+
+    line-height:1.8;
+
+}
+
+/*=========================================================
+        SERVICES SECTION
+=========================================================*/
+
+.services-section{
+
+    background:#111827;
+
+}
+
+.services-section .card{
+
+    background:#1e293b;
+
+    border-radius:18px;
+
+    transition:.4s;
+
+    height:100%;
+
+}
+
+.services-section .card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.45);
+
+}
+
+.services-section i{
+
+    font-size:60px;
+
+    color:#38bdf8;
+
+    margin-bottom:18px;
+
+}
+
+.services-section h4{
+
+    margin-top:18px;
+
+    margin-bottom:15px;
+
+}
+
+.services-section p{
+
+    color:#d1d5db;
+
+    line-height:1.8;
+
+}
+
+/*=========================================================
+        FEATURE ICON ANIMATION
+=========================================================*/
+
+.features-section .card:hover i,
+.services-section .card:hover i{
+
+    transform:scale(1.18);
+
+    transition:.4s;
+
+}
+
+/*=========================================================
+        SECTION TITLES
+=========================================================*/
+
+.features-section h2,
+.services-section h2{
+
+    font-size:40px;
+
+    font-weight:700;
+
+}
+
+.features-section .text-center p,
+.services-section .text-center p{
+
+    color:#cbd5e1;
+
+    font-size:18px;
+
+}
+
+/*=========================================================
+        RESPONSIVE
+=========================================================*/
+
+@media(max-width:992px){
+
+    .features-section h2,
+    .services-section h2{
+
+        font-size:34px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .features-section .card,
+    .services-section .card{
+
+        margin-bottom:25px;
+
+    }
+
+}
+
+@media(max-width:576px){
+
+    .features-section h2,
+    .services-section h2{
+
+        font-size:28px;
+
+    }
+
+    .features-section i,
+    .services-section i{
+
+        font-size:48px;
+
+    }
+
+}
+/*=========================================================
+            PART 2C-3A
+     WHY CHOOSE US + CONTACT SECTION
+=========================================================*/
+
+/*==============================
+        WHY CHOOSE US
+==============================*/
+
+.why-section{
+
+    background:#0f172a;
+
+}
+
+.why-section h2{
+
+    font-size:42px;
+
+    font-weight:700;
+
+    margin-bottom:40px;
+
+}
+
+.why-section img{
+
+    width:100%;
+
+    border-radius:20px;
+
+    transition:.5s;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.35);
+
+}
+
+.why-section img:hover{
+
+    transform:scale(1.03);
+
+}
+
+.why-section .list-group{
+
+    margin-top:20px;
+
+}
+
+.why-section .list-group-item{
+
+    background:#111827;
+
+    color:#ffffff;
+
+    border:none;
+
+    border-radius:12px;
+
+    margin-bottom:15px;
+
+    padding:18px 25px;
+
+    transition:.3s;
+
+    font-size:17px;
+
+}
+
+.why-section .list-group-item:hover{
+
+    background:#1e293b;
+
+    color:#38bdf8;
+
+    padding-left:35px;
+
+}
+
+
+/*==============================
+        CONTACT SECTION
+==============================*/
+
+.contact-section{
+
+    background:#111827;
+
+}
+
+.contact-section h2{
+
+    font-size:42px;
+
+    font-weight:700;
+
+}
+
+.contact-section .lead{
+
+    color:#d1d5db;
+
+    margin-bottom:40px;
+
+}
+
+.contact-section .col-md-4{
+
+    margin-bottom:30px;
+
+}
+
+.contact-box{
+
+    background:#1e293b;
+
+    padding:35px;
+
+    border-radius:18px;
+
+    transition:.4s;
+
+    height:100%;
+
+}
+
+.contact-box:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 18px 40px rgba(0,0,0,.45);
+
+}
+
+.contact-box i{
+
+    font-size:55px;
+
+    color:#38bdf8;
+
+    margin-bottom:20px;
+
+    transition:.4s;
+
+}
+
+.contact-box:hover i{
+
+    transform:scale(1.15);
+
+}
+
+.contact-box h5{
+
+    margin-bottom:15px;
+
+    font-weight:600;
+
+}
+
+.contact-box p{
+
+    color:#d1d5db;
+
+    margin-bottom:0;
+
+}
+
+
+/*==============================
+        IMAGE EFFECT
+==============================*/
+
+img{
+
+    transition:.4s ease;
+
+}
+
+img:hover{
+
+    transform:scale(1.02);
+
+}
+
+
+/*==============================
+        RESPONSIVE
+==============================*/
+
+@media(max-width:992px){
+
+    .why-section{
+
+        text-align:center;
+
+    }
+
+    .why-section img{
+
+        margin-top:40px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .why-section h2,
+    .contact-section h2{
+
+        font-size:34px;
+
+    }
+
+    .contact-box{
+
+        margin-bottom:20px;
+
+    }
+
+}
+
+@media(max-width:576px){
+
+    .why-section h2,
+    .contact-section h2{
+
+        font-size:28px;
+
+    }
+
+    .contact-box{
+
+        padding:25px;
+
+    }
+
+    .contact-box i{
+
+        font-size:45px;
+
+    }
+
+}
+/*=========================================================
+            PART 2C-3B-1
+        FOOTER + FINAL CTA
+=========================================================*/
+
+
+/*==============================
+        FINAL CTA
+==============================*/
+
+.final-cta{
+
+    background:#0f172a;
+
+}
+
+.final-cta .card{
+
+    background:linear-gradient(135deg,#0ea5e9,#0284c7);
+
+    border:none;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    transition:.4s;
+
+}
+
+.final-cta .card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.40);
+
+}
+
+.final-cta h2{
+
+    color:#111827;
+
+    font-size:42px;
+
+    font-weight:700;
+
+}
+
+.final-cta p{
+
+    color:#1f2937;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+}
+
+.final-cta .btn-dark{
+
+    padding:14px 35px;
+
+    border-radius:10px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.final-cta .btn-dark:hover{
+
+    background:#111827;
+
+    transform:scale(1.05);
+
+}
+
+
+
+/*==============================
+            FOOTER
+==============================*/
+
+footer{
+
+    background:#020617;
+
+    color:#d1d5db;
+
+    padding-top:60px;
+
+}
+
+footer h4{
+
+    color:#38bdf8;
+
+    margin-bottom:20px;
+
+    font-weight:700;
+
+}
+
+footer h5{
+
+    color:#38bdf8;
+
+    margin-bottom:20px;
+
+    font-weight:600;
+
+}
+
+footer p{
+
+    color:#cbd5e1;
+
+    line-height:1.8;
+
+}
+
+footer ul{
+
+    padding-left:0;
+
+}
+
+footer li{
+
+    list-style:none;
+
+    margin-bottom:12px;
+
+}
+
+.footer-link{
+
+    color:#d1d5db;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+.footer-link:hover{
+
+    color:#38bdf8;
+
+    padding-left:6px;
+
+}
+
+footer hr{
+
+    border-color:#334155;
+
+}
+
+footer .text-center{
+
+    color:#94a3b8;
+
+    font-size:15px;
+
+}
+
+
+
+/*==============================
+        FOOTER ICON
+==============================*/
+
+footer i{
+
+    color:#38bdf8;
+
+}
+
+
+
+/*==============================
+        FOOTER HOVER
+==============================*/
+
+footer .col-md-4{
+
+    transition:.3s;
+
+}
+
+footer .col-md-4:hover{
+
+    transform:translateY(-5px);
+
+}
+
+
+
+/*==============================
+        RESPONSIVE
+==============================*/
+
+@media(max-width:768px){
+
+    .final-cta h2{
+
+        font-size:32px;
+
+    }
+
+    footer{
+
+        text-align:center;
+
+    }
+
+}
+
+@media(max-width:576px){
+
+    .final-cta h2{
+
+        font-size:28px;
+
+    }
+
+    .final-cta p{
+
+        font-size:16px;
+
+    }
+
+}
+/*=========================================================
+            PART 2C-3B-2A
+            SCROLL TO TOP BUTTON
+=========================================================*/
+
+#scrollTopBtn{
+
+    position:fixed;
+
+    bottom:30px;
+
+    right:30px;
+
+    width:55px;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#0ea5e9;
+
+    color:#ffffff;
+
+    font-size:34px;
+
+    cursor:pointer;
+
+    display:none;
+
+    z-index:9999;
+
+    transition:.4s;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.35);
+
+}
+
+#scrollTopBtn:hover{
+
+    background:#0284c7;
+
+    transform:translateY(-6px) scale(1.08);
+
+}
+
+#scrollTopBtn i{
+
+    line-height:0;
+
+}
+
+/* Small floating animation */
+
+@keyframes floatButton{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-6px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+#scrollTopBtn{
+
+    animation:floatButton 2.5s infinite;
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    #scrollTopBtn{
+
+        width:48px;
+
+        height:48px;
+
+        font-size:28px;
+
+        right:18px;
+
+        bottom:18px;
+
+    }
+
+}
+/*=============================================
+        ACTIVE NAVIGATION LINK
+=============================================*/
+
+.nav-link.active{
+
+    color:#38bdf8 !important;
+
+    font-weight:600;
+
+}
+
+
+/*=============================================
+        SCROLL TRANSITION
+=============================================*/
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+/*=================================================
+        PART 2C-3B-2B-2A
+        FADE-IN EFFECT
+=================================================*/
+
+.hidden{
+
+    opacity:0;
+
+    transform:translateY(50px);
+
+    transition:all .8s ease;
+
+}
+
+.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+/*=========================================================
+                    LOGIN PAGE
+=========================================================*/
+
+.card{
+    border-radius:20px;
+    transition:0.4s ease;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 40px rgba(0,0,0,0.4);
+}
+
+.form-control{
+
+    background:#1f2937;
+
+    color:#0d0d0d;
+
+    border:1px solid #374151;
+
+    border-radius:10px;
+
+    padding:12px;
+
+}
+
+.form-control:focus{
+
+    background:#111827;
+
+    color:#ffffff;
+
+    border-color:#38bdf8;
+
+    box-shadow:0 0 12px rgba(56,189,248,.35);
+
+}
+
+.input-group-text{
+
+    background:#111827;
+
+    color:#38bdf8;
+
+    border:1px solid #374151;
+
+}
+
+.btn-info{
+
+    background:#0ea5e9;
+
+    border:none;
+
+    transition:.3s;
+
+}
+
+.btn-info:hover{
+
+    background:#0284c7;
+
+    transform:translateY(-3px);
+
+}
+
+.btn-outline-info{
+
+    transition:.3s;
+
+}
+
+.btn-outline-info:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.form-check-input:checked{
+
+    background:#0ea5e9;
+
+    border-color:#0ea5e9;
+
+}
+
+a{
+
+    transition:.3s;
+
+}
+
+a:hover{
+
+    color:#38bdf8 !important;
+
+}
+
+.display-1{
+
+    animation:loginIcon 2.5s infinite;
+
+}
+
+@keyframes loginIcon{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/*=========================================================
+                LOGIN PAGE RESPONSIVE
+=========================================================*/
+
+@media(max-width:768px){
+
+    .card{
+
+        margin:20px;
+
+    }
+
+    .display-1{
+
+        font-size:70px;
+
+    }
+
+}
+/*=========================================================
+                REGISTER PAGE
+=========================================================*/
+
+.register-section{
+
+    padding:80px 0;
+
+}
+
+.register-card{
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    transition:.4s;
+
+}
+
+.register-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 15px 40px rgba(0,0,0,.45);
+
+}
+
+.register-card .card-body{
+
+    padding:40px;
+
+}
+
+.register-icon{
+
+    font-size:80px;
+
+    color:#38bdf8;
+
+    animation:floatIcon 3s infinite ease-in-out;
+
+}
+
+@keyframes floatIcon{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.form-label{
+
+    font-weight:600;
+
+    color:#ffffff;
+
+}
+
+.form-control{
+
+    background:#1f2937;
+
+    border:1px solid #374151;
+
+    color:#ffffff;
+
+    border-radius:10px;
+
+    transition:.3s;
+
+}
+
+.form-control::placeholder{
+
+    color:#bdbdbd;
+
+}
+
+.form-control:focus{
+
+    background:#111827;
+
+    color:#ffffff;
+
+    border-color:#38bdf8;
+
+    box-shadow:0 0 12px rgba(56,189,248,.35);
+
+}
+
+.input-group-text{
+
+    background:#111827;
+
+    border:1px solid #374151;
+
+    color:#38bdf8;
+
+}
+
+.form-check-label{
+
+    color:#ffffff;
+
+}
+
+.form-check-input:checked{
+
+    background:#0ea5e9;
+
+    border-color:#0ea5e9;
+
+}
+
+.btn-info{
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.btn-info:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.btn-outline-info{
+
+    transition:.3s;
+
+}
+
+.btn-outline-info:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.card{
+
+    border:none;
+
+    border-radius:20px;
+
+}
+
+.card-body{
+
+    animation:fadeUp .8s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+small{
+
+    color:#d1d5db;
+
+}
+
+hr{
+
+    border-color:#6b7280;
+
+}
+
+/*=========================================================
+                RESPONSIVE
+=========================================================*/
+
+@media(max-width:768px){
+
+    .register-card .card-body{
+
+        padding:25px;
+
+    }
+
+    .register-icon{
+
+        font-size:60px;
+
+    }
+
+}
+/* ==========================================
+   LOGIN & REGISTER PROFESSIONAL THEME
+========================================== */
+
+.auth-card{
+    background: #0f172a;
+    border: 2px solid #38bdf8;
+    border-radius: 18px;
+    padding: 35px;
+    box-shadow: 0 0 25px rgba(56,189,248,0.35);
+}
+
+.auth-card h2,
+.auth-card h3,
+.auth-card h4,
+.auth-card h5,
+.auth-card p,
+.auth-card label{
+    color: #ffffff;
+}
+
+.auth-card .form-control{
+    background: #1e293b;
+    color: #ffffff;
+    border: 2px solid #38bdf8;
+    border-radius: 10px;
+    padding: 12px;
+}
+
+.auth-card .form-control::placeholder{
+    color: #cbd5e1;
+}
+
+.auth-card .form-control:focus{
+    background: #1e293b;
+    color: white;
+    border-color: #67e8f9;
+    box-shadow: 0 0 10px rgba(56,189,248,.6);
+}
+
+/* Buttons */
+
+.btn-login,
+.btn-register{
+
+    background: linear-gradient(90deg,#0ea5e9,#38bdf8);
+
+    color:white;
+
+    border:none;
+
+    font-weight:bold;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    transition:.3s;
+}
+
+.btn-login:hover,
+.btn-register:hover{
+
+    background: linear-gradient(90deg,#38bdf8,#06b6d4);
+
+    transform:translateY(-2px);
+
+    color:white;
+}
+
+/* Links */
+
+.auth-card a{
+
+    color:#38bdf8;
+
+    text-decoration:none;
+}
+
+.auth-card a:hover{
+
+    color:#67e8f9;
+
+    text-decoration:underline;
+}
+/* =====================================
+   LOGIN & REGISTER PROFESSIONAL THEME
+===================================== */
+
+.auth-card{
+    background:#0f172a !important;
+    border:2px solid #38bdf8;
+    border-radius:20px;
+    box-shadow:0 0 30px rgba(56,189,248,.45);
+}
+
+.auth-card .card-body{
+    background:#0f172a;
+    border-radius:20px;
+}
+
+.auth-card h3,
+.auth-card p,
+.auth-card label{
+    color:white;
+}
+
+/* Input */
+
+.input-group-text{
+    background:#38bdf8;
+    color:#000;
+    border:none;
+}
+
+.form-control{
+
+    background:#1e293b !important;
+
+    color:white !important;
+
+    border:2px solid #38bdf8 !important;
+}
+
+.form-control::placeholder{
+
+    color:#cbd5e1;
+}
+
+.form-control:focus{
+
+    background:#1e293b !important;
+
+    color:white !important;
+
+    border-color:#67e8f9 !important;
+
+    box-shadow:0 0 12px rgba(56,189,248,.6);
+}
+
+/* Login Button */
+
+.btn-login{
+
+    width:100%;
+
+    background:linear-gradient(90deg,#0ea5e9,#38bdf8);
+
+    color:white;
+
+    border:none;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.btn-login:hover{
+
+    background:linear-gradient(90deg,#38bdf8,#06b6d4);
+
+    transform:translateY(-2px);
+
+    color:white;
+}
+
+/* Register Button */
+
+.btn-register{
+
+    background:#38bdf8;
+
+    color:#08111f;
+
+    border:none;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.btn-register:hover{
+
+    background:#67e8f9;
+
+    color:#000;
+}
+
+/* Checkbox */
+
+.form-check-input{
+
+    background:#1e293b;
+
+    border:1px solid #38bdf8;
+}
+
+/* Links */
+
+a{
+
+    transition:.3s;
+}
+
+a:hover{
+
+    color:#67e8f9 !important;
+}
+.login-section{
+
+    background:linear-gradient(
+        135deg,
+        #020617,
+        #0f172a,
+        #1e3a8a
+    );
+
+    min-height:100vh;
+}
+/* Override Bootstrap Login Button */
+.btn-outline-light{
+    color: #000000 !important;
+    background-color: #ffffff !important;
+    border: 2px solid #0ea5e9 !important;
+    font-weight: 600;
+}
+
+.btn-outline-light:hover{
+    background-color: #0ea5e9 !important;
+    color: #ffffff !important;
+}
+
+/* Override Bootstrap Register Button */
+.btn-info{
+    background-color: #0ea5e9 !important;
+    border-color: #0ea5e9 !important;
+    color: #ffffff !important;
+    font-weight: 600;
+}
+
+.btn-info:hover{
+    background-color: #0284c7 !important;
+    border-color: #0284c7 !important;
+}
+.hero h1{
+    color:white !important;
+}
+
+.hero p{
+    color:#d1d5db !important;
+}
+
+.hero .badge{
+    background:#0ea5e9 !important;
+    color:white !important;
+}
+/* ===========================
+   LOGIN BUTTON FIX
+=========================== */
+
+.btn-outline-light{
+
+    color:white !important;
+
+    border:2px solid #38bdf8 !important;
+
+    background:transparent !important;
+
+    font-weight:600;
+}
+
+.btn-outline-light:hover{
+
+    background:#38bdf8 !important;
+
+    color:black !important;
+}
+/* =====================================
+   HERO SECTION
+===================================== */
+
+.hero-section{
+
+    background: linear-gradient(
+        135deg,
+        #020617,
+        #0f172a,
+        #1e3a8a
+    );
+
+    padding:80px 0;
+
+}
+
+.hero-section h1{
+
+    color:white;
+
+}
+
+.hero-section p{
+
+    color:#d1d5db !important;
+
+}
+
+.hero-section .btn-outline-light{
+
+    color:white !important;
+
+    border:2px solid #38bdf8 !important;
+
+}
+
+.hero-section .btn-outline-light:hover{
+
+    background:#38bdf8 !important;
+
+    color:black !important;
+
+}
+

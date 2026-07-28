@@ -1,0 +1,210 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="py-5">
+
+<div class="container">
+
+    <h1 class="text-center text-danger fw-bold mb-2">
+
+        <i class="bi bi-shield-exclamation"></i>
+
+        Intrusion Detection System
+
+    </h1>
+
+    <p class="text-center text-muted mb-5">
+
+        Monitor suspicious login attempts, unauthorized access and cloud security threats.
+
+    </p>
+
+    <!-- Statistics Cards -->
+
+    <div class="row g-4">
+
+        <div class="col-lg-3 col-md-6">
+
+            <div class="card bg-danger text-white shadow-lg border-0">
+
+                <div class="card-body text-center">
+
+                    <i class="bi bi-bug-fill display-3"></i>
+
+                    <h1 class="mt-3">
+
+                        {{ total_intrusions }}
+
+                    </h1>
+
+                    <h5>Total Intrusions</h5>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+
+            <div class="card bg-warning shadow-lg border-0">
+
+                <div class="card-body text-center">
+
+                    <i class="bi bi-exclamation-triangle-fill display-3"></i>
+
+                    <h1 class="mt-3">
+
+                        {{ today_intrusions }}
+
+                    </h1>
+
+                    <h5>Today's Alerts</h5>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+
+            <div class="card bg-success text-white shadow-lg border-0">
+
+                <div class="card-body text-center">
+
+                    <i class="bi bi-shield-check display-3"></i>
+
+                    <h1 class="mt-3">
+
+                        Protected
+
+                    </h1>
+
+                    <h5>System Status</h5>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+
+            <div class="card bg-primary text-white shadow-lg border-0">
+
+                <div class="card-body text-center">
+
+                    <i class="bi bi-eye-fill display-3"></i>
+
+                    <h1 class="mt-3">
+
+                        24/7
+
+                    </h1>
+
+                    <h5>Monitoring</h5>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Intrusion Information -->
+
+    <div class="card shadow-lg border-0 mt-5">
+
+        <div class="card-header bg-dark text-white">
+
+            <h3>
+
+                <i class="bi bi-info-circle-fill"></i>
+
+                Intrusion Detection Information
+
+            </h3>
+
+        </div>
+
+        <div class="card-body">
+
+            <ul class="list-group list-group-flush">
+
+                <li class="list-group-item">
+
+                    ✅ Detects failed login attempts
+
+                </li>
+
+                <li class="list-group-item">
+
+                    ✅ Monitors unauthorized access
+
+                </li>
+
+                <li class="list-group-item">
+
+                    ✅ Records suspicious activities
+
+                </li>
+
+                <li class="list-group-item">
+
+                    ✅ Generates security alerts
+
+                </li>
+
+                <li class="list-group-item">
+
+                    ✅ Protects cloud resources
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+    <!-- Dashboard Button -->
+
+    <div class="text-center mt-5">
+
+        <a href="/admin-dashboard"
+
+           class="btn btn-primary btn-lg">
+
+            <i class="bi bi-arrow-left-circle-fill"></i>
+
+            Back to Dashboard
+
+        </a>
+
+    </div>
+
+    <div class="text-center mt-4">
+
+<a href="/intrusion-logs"
+
+class="btn btn-danger btn-lg">
+
+<i class="bi bi-list-ul"></i>
+
+View Intrusion Logs
+
+</a>
+
+</div>
+
+
+
+
+</div>
+
+</section>
+
+{% endblock %}

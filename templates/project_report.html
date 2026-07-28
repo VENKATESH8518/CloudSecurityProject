@@ -1,0 +1,168 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="text-center mb-5">
+        <h1 class="text-primary fw-bold">
+            <i class="bi bi-file-earmark-text-fill"></i>
+            Cloud Security Project Report
+        </h1>
+
+        <p class="text-muted">
+            Final Summary of the Cloud Security System
+        </p>
+    </div>
+
+    <div class="row g-4">
+
+        <div class="col-md-3">
+            <div class="card shadow text-center">
+                <div class="card-body">
+                    <i class="bi bi-people-fill display-4 text-primary"></i>
+                    <h2>{{ total_users }}</h2>
+                    <p>Total Users</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow text-center">
+                <div class="card-body">
+                    <i class="bi bi-folder-fill display-4 text-warning"></i>
+                    <h2>{{ total_files }}</h2>
+                    <p>Total Files</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow text-center">
+                <div class="card-body">
+                    <i class="bi bi-download display-4 text-success"></i>
+                    <h2>{{ total_downloads }}</h2>
+                    <p>Total Downloads</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow text-center">
+                <div class="card-body">
+                    <i class="bi bi-shield-lock-fill display-4 text-danger"></i>
+                    <h2>{{ total_logs }}</h2>
+                    <p>Security Logs</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <hr class="my-5">
+
+    <div class="card shadow">
+
+        <div class="card-header bg-primary text-white">
+            <h4>Project Features</h4>
+        </div>
+
+        <div class="card-body">
+
+            <ul class="list-group list-group-flush">
+
+                <li class="list-group-item">✅ User Registration & Login</li>
+
+                <li class="list-group-item">✅ OTP Authentication</li>
+
+                <li class="list-group-item">✅ AES-256 File Encryption</li>
+
+                <li class="list-group-item">✅ SHA-256 File Integrity Verification</li>
+
+                <li class="list-group-item">✅ Secure File Upload & Download</li>
+
+                <li class="list-group-item">✅ Download History</li>
+
+                <li class="list-group-item">✅ Security Logs</li>
+
+                <li class="list-group-item">✅ Intrusion Detection</li>
+
+                <li class="list-group-item">✅ Security Analytics Dashboard</li>
+
+                <li class="list-group-item">✅ Admin Dashboard</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+    <div class="card mt-4 shadow">
+
+        <div class="card-header bg-success text-white">
+            <h4>Technologies Used</h4>
+        </div>
+
+        <div class="card-body">
+
+            <div class="row">
+
+                <div class="col-md-4">
+                    <h5>Frontend</h5>
+                    <ul>
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>Bootstrap 5</li>
+                        <li>JavaScript</li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4">
+                    <h5>Backend</h5>
+                    <ul>
+                        <li>Python</li>
+                        <li>Flask</li>
+                        <li>SQLite</li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4">
+                    <h5>Security</h5>
+                    <ul>
+                        <li>AES-256 Encryption</li>
+                        <li>SHA-256 Hashing</li>
+                        <li>OTP Verification</li>
+                        <li>Session Security</li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="alert alert-success mt-5 text-center">
+
+        <h3>
+            🎉 Cloud Security Project Successfully Completed
+        </h3>
+
+        <p>
+            All modules have been implemented and tested successfully.
+        </p>
+
+    </div>
+
+    <div class="text-center mt-4">
+
+       <a href="/system-backup" class="btn btn-success btn-lg">
+    <i class="bi bi-arrow-right-circle"></i>
+    Next
+</a>
+
+    </div>
+
+</div>
+
+{% endblock %}

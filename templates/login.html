@@ -1,0 +1,445 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="py-5">
+
+<div class="container">
+
+<div class="row justify-content-center align-items-center">
+
+<!-- LEFT SIDE -->
+
+<div class="col-lg-6 mb-4">
+
+<div class="text-center">
+
+<i class="bi bi-cloud-lock-fill text-primary"
+
+style="font-size:130px;">
+
+</i>
+
+<h1 class="fw-bold mt-4">
+
+Cloud Security Platform
+
+</h1>
+
+<h4 class="text-primary">
+
+Secure Authentication System
+
+</h4>
+
+<p class="lead text-muted mt-4">
+
+Protect your cloud files using
+
+<strong>AES-256 Encryption</strong>,
+
+<strong>SHA-256 Integrity</strong>,
+
+<strong>OTP Authentication</strong>
+
+and
+
+<strong>Role-Based Access Control</strong>.
+
+</p>
+
+<div class="row mt-5">
+
+<div class="col-md-4">
+
+<div class="card shadow border-0">
+
+<div class="card-body text-center">
+
+<i class="bi bi-lock-fill text-success display-5"></i>
+
+<h5 class="mt-3">
+
+AES-256
+
+</h5>
+
+<p class="small">
+
+Encryption
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card shadow border-0">
+
+<div class="card-body text-center">
+
+<i class="bi bi-fingerprint text-primary display-5"></i>
+
+<h5 class="mt-3">
+
+SHA-256
+
+</h5>
+
+<p class="small">
+
+Integrity
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card shadow border-0">
+
+<div class="card-body text-center">
+
+<i class="bi bi-shield-lock-fill text-danger display-5"></i>
+
+<h5 class="mt-3">
+
+OTP
+
+</h5>
+
+<p class="small">
+
+Verification
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- LOGIN CARD -->
+
+<div class="col-lg-5">
+
+<div class="card shadow-lg border-0 rounded-4">
+
+<div class="card-body p-5">
+
+<div class="text-center mb-4">
+
+<i class="bi bi-person-circle text-primary"
+
+style="font-size:70px;">
+
+</i>
+
+<h2 class="fw-bold mt-3">
+
+Secure Login
+
+</h2>
+
+<p class="text-muted">
+
+Access your protected cloud account.
+
+</p>
+
+</div>
+
+<form method="POST" action="{{ url_for('login') }}">
+
+<div class="mb-4">
+
+<label class="form-label fw-semibold">
+
+<i class="bi bi-person-fill"></i>
+
+Username
+
+</label>
+
+<input
+
+type="text"
+
+name="username"
+
+class="form-control form-control-lg"
+
+placeholder="Enter Username"
+
+required>
+
+</div>
+
+<div class="mb-4">
+
+<label class="form-label fw-semibold">
+
+<i class="bi bi-lock-fill"></i>
+
+Password
+
+</label>
+
+<div class="input-group">
+
+<input
+
+type="password"
+
+id="password"
+
+name="password"
+
+class="form-control form-control-lg"
+
+placeholder="Enter Password"
+
+required>
+
+<button
+
+class="btn btn-outline-secondary"
+
+type="button"
+
+onclick="togglePassword()">
+
+<i id="eyeIcon"
+
+class="bi bi-eye-fill">
+
+</i>
+
+</button>
+
+</div>
+
+</div>
+
+<div class="form-check mb-4">
+
+<input
+
+class="form-check-input"
+
+type="checkbox"
+
+id="remember">
+
+<label
+
+class="form-check-label"
+
+for="remember">
+
+Remember Me
+
+</label>
+
+</div>
+
+<div class="d-grid">
+
+<button
+
+type="submit"
+
+class="btn btn-primary btn-lg">
+
+<i class="bi bi-box-arrow-in-right"></i>
+
+Secure Login
+
+</button>
+
+</div>
+
+<!-- Login Links -->
+
+<div class="text-center mt-4">
+
+<a href="/forgot-password"
+class="text-decoration-none">
+
+<i class="bi bi-key-fill"></i>
+
+Forgot Password?
+
+</a>
+
+<span class="mx-2">|</span>
+
+<a href="/register"
+class="text-decoration-none">
+
+<i class="bi bi-person-plus-fill"></i>
+
+Create Account
+
+</a>
+
+</div>
+
+<hr class="my-4">
+
+<!-- Security Information -->
+
+<div class="card bg-light border-0">
+
+<div class="card-body">
+
+<h5 class="text-center text-primary mb-3">
+
+<i class="bi bi-shield-check"></i>
+
+Security Features
+
+</h5>
+
+<div class="row">
+
+<div class="col-6">
+
+<p>
+
+<i class="bi bi-check-circle-fill text-success"></i>
+
+AES-256 Encryption
+
+</p>
+
+<p>
+
+<i class="bi bi-check-circle-fill text-success"></i>
+
+OTP Authentication
+
+</p>
+
+<p>
+
+<i class="bi bi-check-circle-fill text-success"></i>
+
+Role Based Access
+
+</p>
+
+</div>
+
+<div class="col-6">
+
+<p>
+
+<i class="bi bi-check-circle-fill text-success"></i>
+
+SHA-256 Integrity
+
+</p>
+
+<p>
+
+<i class="bi bi-check-circle-fill text-success"></i>
+
+Secure Sessions
+
+</p>
+
+<p>
+
+<i class="bi bi-check-circle-fill text-success"></i>
+
+Cloud Protection
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Project Information -->
+
+<div class="text-center mt-4">
+
+<p class="text-muted mb-1">
+
+Cloud Security Project
+
+</p>
+
+<small class="text-secondary">
+
+A Novel Based Security Architecture of Cloud Computing
+
+</small>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<script>
+
+function togglePassword(){
+
+const password=document.getElementById("password");
+
+const eye=document.getElementById("eyeIcon");
+
+if(password.type==="password"){
+
+password.type="text";
+
+eye.classList.remove("bi-eye-fill");
+
+eye.classList.add("bi-eye-slash-fill");
+
+}
+
+else{
+
+password.type="password";
+
+eye.classList.remove("bi-eye-slash-fill");
+
+eye.classList.add("bi-eye-fill");
+
+}
+
+}
+
+</script>
+
+{% endblock %}

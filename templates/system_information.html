@@ -1,0 +1,180 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="text-center mb-5">
+
+        <i class="bi bi-cpu-fill text-primary" style="font-size:80px;"></i>
+
+        <h1 class="fw-bold text-primary mt-3">
+            System Information
+        </h1>
+
+        <p class="text-muted">
+            Cloud Security Project Configuration Overview
+        </p>
+
+    </div>
+
+    <div class="card shadow mb-4">
+
+        <div class="card-header bg-primary text-white">
+            <h4>Project Details</h4>
+        </div>
+
+        <div class="card-body">
+
+            <table class="table table-bordered">
+
+                <tr>
+                    <th>Project Name</th>
+                    <td>A Novel Based Security Architecture of Cloud Computing</td>
+                </tr>
+
+                <tr>
+                    <th>Programming Language</th>
+                    <td>Python</td>
+                </tr>
+
+                <tr>
+                    <th>Framework</th>
+                    <td>Flask</td>
+                </tr>
+
+                <tr>
+                    <th>Database</th>
+                    <td>SQLite</td>
+                </tr>
+
+                <tr>
+                    <th>Frontend</th>
+                    <td>HTML, CSS, Bootstrap 5, JavaScript</td>
+                </tr>
+
+                <tr>
+                    <th>Encryption</th>
+                    <td>AES-256</td>
+                </tr>
+
+                <tr>
+                    <th>Hash Algorithm</th>
+                    <td>SHA-256</td>
+                </tr>
+
+                <tr>
+                    <th>Authentication</th>
+                    <td>OTP Verification</td>
+                </tr>
+
+                <tr>
+                    <th>Access Control</th>
+                    <td>Role Based Access Control</td>
+                </tr>
+
+                <tr>
+                    <th>Security Logs</th>
+                    <td>Enabled</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <div class="card shadow mb-4">
+
+        <div class="card-header bg-success text-white">
+            <h4>System Features</h4>
+        </div>
+
+        <div class="card-body">
+
+            <div class="row">
+
+                <div class="col-md-6">
+
+                    <ul class="list-group">
+
+                        <li class="list-group-item">✅ User Registration</li>
+
+                        <li class="list-group-item">✅ Secure Login</li>
+
+                        <li class="list-group-item">✅ OTP Authentication</li>
+
+                        <li class="list-group-item">✅ File Upload</li>
+
+                        <li class="list-group-item">✅ AES Encryption</li>
+
+                    </ul>
+
+                </div>
+
+                <div class="col-md-6">
+
+                    <ul class="list-group">
+
+                        <li class="list-group-item">✅ SHA-256 Verification</li>
+
+                        <li class="list-group-item">✅ Download Monitoring</li>
+
+                        <li class="list-group-item">✅ Security Analytics</li>
+
+                        <li class="list-group-item">✅ Intrusion Detection</li>
+
+                        <li class="list-group-item">✅ Admin Dashboard</li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="alert alert-info text-center">
+
+        <h4>
+
+            <i class="bi bi-info-circle-fill"></i>
+
+            Cloud Security System Status
+
+        </h4>
+
+        <p>
+
+            All project modules have been integrated successfully and the
+            system is ready for deployment.
+
+        </p>
+
+    </div>
+
+    <div class="text-center mt-5">
+
+        <a href="/thank-you" class="btn btn-secondary btn-lg">
+
+            <i class="bi bi-arrow-left-circle"></i>
+
+            Back
+
+        </a>
+
+        <a href="/about-project" class="btn btn-success btn-lg">
+    <i class="bi bi-arrow-right-circle"></i>
+    Next
+</a>
+
+
+
+       
+    </div>
+
+</div>
+
+{% endblock %}
